@@ -1,0 +1,30 @@
+.cards--div {
+  margin: 0 auto;
+}
+
+.cards--h1 {
+  text-align: center;
+  font-size: 50px;
+}
+
+.cards--ul {
+  display: flex;
+}
+.cards--ul li {
+  list-style: none;
+}
+
+.cards--li {
+  border: 1px solid red;
+}
+
+.cards--a {
+  text-align: center;
+  width: 200px;
+  height: 800px;
+}
+
+.cards--a__img {
+  width: 400px;
+  height: 250px;
+}/*# sourceMappingURL=style.css.map */

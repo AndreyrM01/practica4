@@ -104,6 +104,39 @@ a:link {
   text-decoration: none;
 }
 
+@media (max-width: 768px) {
+  .cards__h1 {
+    font-size: 32px;
+    padding-bottom: 16px;
+  }
+  .cards__a--container {
+    max-width: 260px;
+    height: 420px;
+  }
+  .cards__a--h2 {
+    font-size: 8px;
+    font-weight: 500;
+  }
+  .cards__a--p {
+    font-size: 18px;
+  }
+  .cards__button--btn {
+    width: 200px;
+    height: 50px;
+    font-size: 12px;
+    font-weight: 500;
+  }
+}
+@media (max-width: 991px) and (min-width: 768px) {
+  .cards__a--container {
+    max-width: 300px;
+    height: 380px;
+  }
+  .cards__a--p {
+    font-size: 20px;
+    font-weight: bolder;
+  }
+}
 body {
   margin: 0 auto;
   text-decoration: none;

@@ -15,15 +15,39 @@
 
 .cards__li{
   margin-right: 20px;
+  border-radius: 10px;
+  transition: ease-out 0.5s;
+  position: relative;
+  z-index: 1;
 }
 
+
 .cards__li:hover{
-  background-color: #ffe24d ;
-  background-position: left;
-  transition: ease-in .2s;
+  cursor: pointer;
   span{
     visibility: visible;
   }
+}
+
+.cards__li::before{
+  transition: ease-out 0.5s;
+  border-bottom-right-radius: 30px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 50%;
+  bottom: 50%;
+  opacity: 0;
+  content: "";
+  background-color: #ffe24d;
+}
+
+.cards__li:hover::before{
+  transition: 0.5 all ease;
+  right: 0;
+  bottom: 0;
+  opacity: 1;
+  z-index: -1;
 }
 
 .cards__a--container{
@@ -64,20 +88,39 @@
   display: block;
   margin-top: 40px;
   background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='13' height='12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.53 6.53a.75.75 0 0 0 0-1.06L7.757.697a.75.75 0 1 0-1.06 1.06L10.939 6l-4.242 4.243a.75.75 0 0 0 1.06 1.06L12.53 6.53ZM0 6.75h12v-1.5H0v1.5Z' fill='%23171717'/%3E%3C/svg%3E");
-  box-shadow: inset 0 0 0 0 linear-gradient(90deg,#ffe24d 11.03%,#99cc7e 53.39%,#93e0f1 103.45%);
   background-repeat: no-repeat;
   background-position:center ;
-  width: 200px;
+  width: 230px;
   visibility: hidden;
   position: relative;
+  transition: 0.5s ease-out;
+  z-index: 1;
 }
 
 .cards__a--span_button:hover{
-  background: linear-gradient(90deg,#ffe24d 11.03%,#99cc7e 53.39%,#93e0f1 103.45%);
-  cursor: pointer;
   background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='23' height='12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M22.53 6.53a.75.75 0 0 0 0-1.06L17.757.697a.75.75 0 0 0-1.06 1.06L20.939 6l-4.242 4.243a.75.75 0 0 0 1.06 1.06L22.53 6.53ZM0 6.75h22v-1.5H0v1.5Z' fill='%23171717'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: center;
+  cursor: pointer;
+}
+
+.cards__a--span_button::before{
+  transition: 0.5s ease-out;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 50%;
+  bottom: 0;
+  opacity: 0;
+  content: "";
+  background: linear-gradient(90deg,#ffe24d 11.03%,#99cc7e 53.39%,#93e0f1 103.45%);
+}
+
+.cards__button--btn:hover::before{
+  transition: 0.5 all ease;
+  right: 0;
+  opacity: 1;
+  z-index: 1;
 }
 
 .cards__button{
@@ -135,15 +178,15 @@ $desktop: (min-width: 992px);
     font-weight: 500;
   }
 }
+
 @media (max-width: 991px) and (min-width: 768px) {
   .cards__a--container{
     max-width: 300px;
     height: 380px;
   }
 
-.cards__a--p {
+  .cards__a--p {
     font-size: 20px;
     font-weight: bolder;
   }
 }
-
